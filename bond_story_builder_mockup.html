@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Scusefingers — Assignment</title>
+<style>
+  :root{
+    --govuk-blue:#1d70b8;
+    --govuk-black:#0b0c0c;
+    --govuk-dark-grey:#505a5f;
+    --govuk-mid-grey:#b1b4b6;
+    --govuk-light-grey:#f3f2f1;
+    --govuk-green:#00703c;
+    --govuk-yellow:#ffdd00;
+    --govuk-red:#d4351c;
+    --govuk-border:#b1b4b6;
+    --govuk-focus-text:#0b0c0c;
+  }
+  html,body{margin:0;padding:0;}
+  body{
+    font-family:"GDS Transport","Helvetica Neue",Arial,sans-serif;
+    color:var(--govuk-black);
+    background:#ffffff;
+    font-size:19px;
+    line-height:1.31579;
+  }
+  a{color:var(--govuk-blue);}
+  a:visited{color:#4c2c92;}
+  a:hover{color:#003078;}
+  a:focus, button:focus, input:focus{
+    outline:3px solid var(--govuk-yellow);
+    outline-offset:0;
+    background:var(--govuk-yellow);
+    color:var(--govuk-focus-text);
+  }
+
+  /* header */
+  .crown-bar{
+    background:var(--govuk-black);
+    padding:10px 0;
+  }
+  .crown-bar-inner{
+    max-width:960px;margin:0 auto;padding:0 15px;
+    display:flex;align-items:center;gap:8px;
+  }
+  .brand-mark{
+    width:30px;height:30px;flex:none;background:#ffffff;color:var(--govuk-black);
+    display:flex;align-items:center;justify-content:center;font-weight:700;font-size:16px;
+    border-radius:4px;
+  }
+  .crown-bar .service-name{
+    color:#ffffff;font-size:24px;font-weight:700;text-decoration:none;letter-spacing:0.5px;
+  }
+  .org-bar{
+    background:#ffffff;border-bottom:10px solid var(--govuk-blue);
+  }
+  .org-bar-inner{
+    max-width:960px;margin:0 auto;padding:12px 15px;
+    display:flex;justify-content:space-between;align-items:center;
+  }
+  .org-bar .title{font-size:16px;font-weight:700;color:var(--govuk-black);}
+  .official-tag{
+    display:inline-block;background:var(--govuk-black);color:#fff;
+    font-size:12px;font-weight:700;letter-spacing:1px;padding:3px 8px;
+    text-transform:uppercase;
+  }
+
+  .phase-banner{background:var(--govuk-black);color:#fff;}
+  .breadcrumb{max-width:960px;margin:0 auto;padding:8px 15px;font-size:16px;}
+  .breadcrumb a{color:#fff;text-decoration:underline;}
+
+  .wrapper{max-width:960px;margin:0 auto;padding:30px 15px 60px;}
+  .grid{display:grid;grid-template-columns:300px 1fr;gap:30px;}
+  @media (max-width:700px){.grid{grid-template-columns:1fr;}}
+
+  h1{font-size:32px;font-weight:700;margin:0 0 10px;}
+  h2.section-heading{font-size:19px;font-weight:700;margin:0 0 15px;}
+  .caption{color:var(--govuk-dark-grey);font-size:19px;display:block;margin-bottom:5px;}
+  p.lede{font-size:19px;margin:0 0 25px;max-width:640px;}
+
+  /* task list */
+  .task-list{list-style:none;margin:0;padding:0;border-top:1px solid var(--govuk-border);}
+  .task-list li{
+    border-bottom:1px solid var(--govuk-border);
+    padding:14px 0;display:flex;justify-content:space-between;align-items:center;
+  }
+  .task-list .task-name a{font-size:19px;text-decoration:none;}
+  .task-list .task-name a:hover{text-decoration:underline;}
+  .task-list .task-name .num{color:var(--govuk-dark-grey);margin-right:8px;}
+  .tag{
+    display:inline-block;font-size:16px;font-weight:700;text-transform:uppercase;
+    padding:4px 10px;letter-spacing:0.5px;min-width:110px;text-align:center;
+  }
+  .tag-not-started{background:var(--govuk-light-grey);color:var(--govuk-black);border:2px solid var(--govuk-mid-grey);}
+  .tag-in-progress{background:#1d70b8;color:#fff;}
+  .tag-completed{background:var(--govuk-green);color:#fff;}
+  .tag-locked{background:#ffffff;color:var(--govuk-dark-grey);border:2px solid var(--govuk-mid-grey);}
+
+  /* fieldset / radios */
+  fieldset{border:0;margin:0 0 30px;padding:0;}
+  legend{padding:0;margin-bottom:20px;}
+  legend h1{margin:0;}
+  .option{
+    border:1px solid var(--govuk-border);
+    padding:16px 20px;margin-bottom:12px;
+    display:flex;gap:14px;align-items:flex-start;
+    cursor:pointer;
+  }
+  .option:hover{border-color:var(--govuk-black);}
+  .option input[type=radio]{
+    width:26px;height:26px;margin-top:2px;flex:none;accent-color:var(--govuk-black);
+  }
+  .option .label-title{font-weight:700;font-size:19px;display:block;}
+  .option .label-desc{color:var(--govuk-dark-grey);font-size:16px;margin-top:4px;display:block;}
+  .meta-row{margin-top:8px;display:flex;gap:8px;flex-wrap:wrap;}
+  .meta-tag{
+    font-size:13px;background:var(--govuk-light-grey);color:var(--govuk-black);
+    padding:2px 8px;border:1px solid var(--govuk-mid-grey);font-weight:700;
+  }
+
+  .govuk-button{
+    font-family:inherit;font-weight:700;font-size:19px;
+    background:var(--govuk-green);color:#fff;border:2px solid transparent;
+    padding:12px 22px;box-shadow:0 2px 0 #002d18;cursor:pointer;
+  }
+  .govuk-button:hover{background:#005a30;}
+  .govuk-button:active{box-shadow:none;top:2px;position:relative;}
+  .govuk-button-secondary{
+    background:var(--govuk-light-grey);color:var(--govuk-black);box-shadow:0 2px 0 #929191;
+  }
+  .govuk-button-secondary:hover{background:#dbdad9;}
+
+  aside .panel{
+    background:var(--govuk-light-grey);padding:20px;
+  }
+  aside h2{font-size:16px;margin:0 0 10px;font-weight:700;}
+  aside p{font-size:16px;color:var(--govuk-dark-grey);margin:0 0 10px;}
+  .spine-item{
+    display:flex;justify-content:space-between;padding:8px 0;
+    border-bottom:1px solid var(--govuk-mid-grey);font-size:16px;
+  }
+  .spine-item:last-child{border-bottom:0;}
+  .dot{width:10px;height:10px;border-radius:50%;display:inline-block;margin-right:8px;}
+  .dot-done{background:var(--govuk-green);}
+  .dot-active{background:var(--govuk-blue);}
+  .dot-pending{background:var(--govuk-mid-grey);}
+
+  footer{
+    border-top:1px solid var(--govuk-border);margin-top:60px;padding:30px 0;
+    background:var(--govuk-light-grey);
+  }
+  footer .inner{max-width:960px;margin:0 auto;padding:0 15px;font-size:14px;color:var(--govuk-dark-grey);
+    display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;}
+  footer a{color:var(--govuk-dark-grey);}
+</style>
+</head>
+<body>
+
+  <div class="crown-bar">
+    <div class="crown-bar-inner">
+      <span class="brand-mark" aria-hidden="true">S</span>
+      <a href="index.html" class="service-name">Scusefingers</a>
+    </div>
+  </div>
+
+  <div class="org-bar">
+    <div class="org-bar-inner">
+      <span class="title">Secret Intelligence Service</span>
+      <span class="official-tag">Official</span>
+    </div>
+  </div>
+
+  <div class="phase-banner">
+    <div class="breadcrumb"><a href="index.html">Home</a> &nbsp;›&nbsp; <a href="index.html">Narrative construction</a> &nbsp;›&nbsp; Assignment</div>
+  </div>
+
+  <div class="wrapper">
+    <div class="grid">
+
+      <main>
+        <span class="caption">Case reference BOND-0742</span>
+        <form>
+          <fieldset>
+            <legend>
+              <h1>What triggers this operation?</h1>
+              <p class="lede">This locks the mission origin for the rest of the narrative. Choose the option that best matches the tone of story you want to build.</p>
+            </legend>
+
+            <label class="option">
+              <input type="radio" name="assignment" checked>
+              <span>
+                <span class="label-title">Official M briefing — missing agents</span>
+                <span class="label-desc">M reports MI6 operatives have gone dark in a specific region and assigns Bond to find out why.</span>
+                <span class="meta-row">
+                  <span class="meta-tag">Dr. No</span>
+                  <span class="meta-tag">Connery era</span>
+                  <span class="meta-tag">Procedural tone</span>
+                </span>
+              </span>
+            </label>
+
+            <label class="option">
+              <input type="radio" name="assignment">
+              <span>
+                <span class="label-title">Honey-trap bait, recognised as a trap</span>
+                <span class="label-desc">An enemy service dangles a defector and a valuable object as bait; Bond is sent in with eyes open.</span>
+                <span class="meta-row">
+                  <span class="meta-tag">From Russia with Love</span>
+                  <span class="meta-tag">The Living Daylights</span>
+                  <span class="meta-tag">Tense procedural</span>
+                </span>
+              </span>
+            </label>
+
+            <label class="option">
+              <input type="radio" name="assignment">
+              <span>
+                <span class="label-title">Stolen WMD ultimatum</span>
+                <span class="label-desc">A criminal organisation steals a weapon of mass consequence and issues a ransom threat.</span>
+                <span class="meta-row">
+                  <span class="meta-tag">Thunderball</span>
+                  <span class="meta-tag">Octopussy</span>
+                  <span class="meta-tag">High-stakes thriller</span>
+                </span>
+              </span>
+            </label>
+
+            <label class="option">
+              <input type="radio" name="assignment">
+              <span>
+                <span class="label-title">Personal vendetta — no institutional sanction</span>
+                <span class="label-desc">A villain harms someone close to Bond directly; Bond acts without official authorisation.</span>
+                <span class="meta-row">
+                  <span class="meta-tag">Licence to Kill</span>
+                  <span class="meta-tag">Dalton era</span>
+                  <span class="meta-tag">Grim, personal</span>
+                </span>
+              </span>
+            </label>
+
+            <label class="option">
+              <input type="radio" name="assignment">
+              <span>
+                <span class="label-title">Compromised Bond as the initial threat</span>
+                <span class="label-desc">Bond himself is brainwashed or discredited and must be deprogrammed before facing the real villain.</span>
+                <span class="meta-row">
+                  <span class="meta-tag">The Man with the Golden Gun (novel)</span>
+                  <span class="meta-tag">Psychological</span>
+                </span>
+              </span>
+            </label>
+
+          </fieldset>
+
+          <button class="govuk-button" type="button">Save and continue</button>
+        </form>
+      </main>
+
+      <aside>
+        <div class="panel">
+          <h2>Story spine</h2>
+          <div class="spine-item"><span><span class="dot dot-active"></span>1. Assignment</span><span class="tag tag-in-progress">In progress</span></div>
+          <div class="spine-item"><span><span class="dot dot-pending"></span>2. Reconnaissance</span><span class="tag tag-not-started">Not started</span></div>
+          <div class="spine-item"><span><span class="dot dot-pending"></span>3. First contact</span><span class="tag tag-not-started">Not started</span></div>
+          <div class="spine-item"><span><span class="dot dot-pending"></span>4. Escalation</span><span class="tag tag-not-started">Not started</span></div>
+          <div class="spine-item"><span><span class="dot dot-pending"></span>5. Confrontation</span><span class="tag tag-locked">Locked</span></div>
+          <div class="spine-item"><span><span class="dot dot-pending"></span>6. Escape / turn</span><span class="tag tag-locked">Locked</span></div>
+          <div class="spine-item"><span><span class="dot dot-pending"></span>7. Final assault</span><span class="tag tag-locked">Locked</span></div>
+          <div class="spine-item"><span><span class="dot dot-pending"></span>8. Resolution</span><span class="tag tag-locked">Locked</span></div>
+          <p style="margin-top:14px;">Phases 5 and 7 lock in once phase 1 is confirmed, since later options are filtered by mission origin.</p>
+        </div>
+      </aside>
+
+    </div>
+  </div>
+
+  <footer>
+    <div class="inner">
+      <span>Scusefingers — Bond narrative construction service</span>
+      <span>© Scusefingers</span>
+    </div>
+  </footer>
+
+</body>
+</html>
