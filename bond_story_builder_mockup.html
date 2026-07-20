@@ -92,6 +92,11 @@
     display:flex;gap:14px;align-items:flex-start;cursor:pointer;
   }
   .option:hover{border-color:var(--govuk-black);}
+  .option.selected{
+    background-color:var(--govuk-yellow);
+    border:2px solid var(--govuk-black);
+    padding:15px 19px;
+  }
   .option input[type=radio]{width:26px;height:26px;margin-top:2px;flex:none;accent-color:var(--govuk-black);}
   .option .label-title{font-weight:700;font-size:19px;display:block;}
   .option .label-desc{color:var(--govuk-dark-grey);font-size:16px;margin-top:4px;display:block;}
@@ -394,9 +399,10 @@
     var optsHtml = "";
     phase.options.forEach(function(opt, idx){
       var checked = (existing === idx) ? " checked" : "";
+      var selectedClass = (existing === idx) ? " selected" : "";
       var tagsHtml = opt.tags.map(function(t){ return '<span class="meta-tag">'+escapeHtml(t)+'</span>'; }).join("");
       var suggestedBadge = (idx === suggested) ? '<span class="suggested-tag">Suggested pairing</span>' : "";
-      optsHtml += '<label class="option">' +
+      optsHtml += '<label class="option'+selectedClass+'">' +
         '<input type="radio" name="phaseOption" value="'+idx+'"'+checked+'>' +
         '<span>' +
           '<span class="label-title">'+escapeHtml(opt.title)+'</span>' +
@@ -424,6 +430,16 @@
           '<button class="govuk-button" type="submit">Save and continue</button>' +
         '</div>' +
       '</form>';
+
+    var formEl = document.getElementById("phase-form");
+    var allOptionLabels = formEl.querySelectorAll(".option");
+    formEl.addEventListener("change", function(e){
+      if(e.target && e.target.name === "phaseOption"){
+        allOptionLabels.forEach(function(lbl){ lbl.classList.remove("selected"); });
+        var closestLabel = e.target.closest(".option");
+        if(closestLabel){ closestLabel.classList.add("selected"); }
+      }
+    });
 
     var backLink = document.getElementById("back-link");
     if(backLink){
