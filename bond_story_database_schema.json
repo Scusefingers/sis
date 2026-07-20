@@ -85,6 +85,38 @@
           "era": "cross-era",
           "tone": "procedural",
           "details": {}
+        },
+        {
+          "name": "Rival Intelligence Contact",
+          "description": "A foreign agent or rival service operative supplies intel, under a fragile truce that could break at any moment.",
+          "source_works": ["From Russia with Love (1963, Kerim Bey)", "The Spy Who Loved Me (1977)"],
+          "era": "cross-era",
+          "tone": "tense procedural",
+          "details": {}
+        },
+        {
+          "name": "Underworld Contact",
+          "description": "A criminal or ex-agent with underworld ties trades information for money or favour, ambiguous loyalties throughout.",
+          "source_works": ["For Your Eyes Only (1981, Columbo)"],
+          "era": "Moore",
+          "tone": "grounded",
+          "details": {}
+        },
+        {
+          "name": "Guerrilla / Insurgent Ally Network",
+          "description": "Bond allies with an irregular armed group who know the terrain better than any official contact could.",
+          "source_works": ["The Living Daylights (1987, mujahideen)"],
+          "era": "Dalton",
+          "tone": "Cold War plausible",
+          "details": {}
+        },
+        {
+          "name": "Comic Local Liaison",
+          "description": "A colourful, over-eager local contact provides intel wrapped in broad comic relief.",
+          "source_works": ["Live and Let Die (1973, Sheriff Pepper)", "Octopussy (1983)"],
+          "era": "Moore",
+          "tone": "broad comedy",
+          "details": {}
         }
       ]
     },
@@ -102,6 +134,38 @@
           "era": "cross-era",
           "tone": "tense-social",
           "details": {}
+        },
+        {
+          "name": "Society Party or Gala Infiltration",
+          "description": "Bond talks his way into a lavish party or auction that doubles as the villain's social front.",
+          "source_works": ["Thunderball (1965)", "Octopussy (1983, Fabergé auction)"],
+          "era": "cross-era",
+          "tone": "glamorous",
+          "details": {}
+        },
+        {
+          "name": "Undercover Professional Cover",
+          "description": "Bond approaches under a false professional identity (genealogist, businessman) that gets him inside without suspicion.",
+          "source_works": ["On Her Majesty's Secret Service (1969)"],
+          "era": "Lazenby",
+          "tone": "restrained",
+          "details": {}
+        },
+        {
+          "name": "Physical Reconnaissance of the Villain's Facility",
+          "description": "Bond conducts a direct, dangerous recon of the operation itself - diving, climbing, or infiltrating a site under cover of night.",
+          "source_works": ["Thunderball (1965, underwater recon)", "For Your Eyes Only (1981, climbing)"],
+          "era": "cross-era",
+          "tone": "physical, grounded",
+          "details": {}
+        },
+        {
+          "name": "Direct Criminal Transaction Observed",
+          "description": "Bond witnesses or intercepts a smuggling drop or deal, getting his first hard evidence of the operation's scale.",
+          "source_works": ["Live and Let Die (1973)", "Licence to Kill (1989)"],
+          "era": "Moore/Dalton",
+          "tone": "grounded",
+          "details": {}
         }
       ]
     },
@@ -118,6 +182,38 @@
           "source_works": ["From Russia with Love (1963)", "The Spy Who Loved Me (1977, inverted as rival-turned-ally)"],
           "era": "cross-era",
           "tone": "suspense",
+          "details": {}
+        },
+        {
+          "name": "Physical Ordeal or Creature Scare",
+          "description": "A staged brush with danger - a planted creature, a booby trap - tests Bond's nerve rather than aiming to kill him outright.",
+          "source_works": ["Dr. No (1962, tarantula)", "Live and Let Die (1973, snake)"],
+          "era": "cross-era",
+          "tone": "visceral",
+          "details": {}
+        },
+        {
+          "name": "Attack on Bond's Support Network",
+          "description": "The villain strikes at someone close to Bond rather than Bond directly, raising the personal stakes.",
+          "source_works": ["Licence to Kill (1989, Felix Leiter maimed)"],
+          "era": "Dalton",
+          "tone": "grim",
+          "details": {}
+        },
+        {
+          "name": "Surveillance Blown, Chase Sequence",
+          "description": "Bond's cover is compromised and a car, boat, or ski chase follows as the villain's people try to run him down.",
+          "source_works": ["most entries; e.g. Live and Let Die (1973, boat chase)", "On Her Majesty's Secret Service (1969, ski chase)"],
+          "era": "cross-era",
+          "tone": "kinetic",
+          "details": {}
+        },
+        {
+          "name": "Poisoning or Drugging Attempt",
+          "description": "An attempt to incapacitate Bond quietly, at a dinner or social event, rather than through open violence.",
+          "source_works": ["Dr. No (1962)", "Thunderball (1965)"],
+          "era": "Connery",
+          "tone": "tense-social",
           "details": {}
         }
       ]
@@ -192,6 +288,38 @@
           "source_works": ["Goldfinger (1964)", "The Spy Who Loved Me (1977)", "Moonraker (1979)"],
           "era": "Moore-heavy but cross-era",
           "tone": "varies",
+          "details": {}
+        },
+        {
+          "name": "Ally-Assisted Rescue",
+          "description": "A local or institutional ally intervenes at the right moment to pull Bond out of danger.",
+          "source_works": ["From Russia with Love (1963, Kerim Bey)", "Dr. No (1962, Quarrel)"],
+          "era": "cross-era",
+          "tone": "procedural",
+          "details": {}
+        },
+        {
+          "name": "Improvised Environmental Escape",
+          "description": "Bond escapes using nothing but his wits and whatever the immediate environment offers - no gadget, no rescue.",
+          "source_works": ["Casino Royale (novel)", "Licence to Kill (1989)", "For Your Eyes Only (1981)"],
+          "era": "Fleming/Dalton",
+          "tone": "grounded",
+          "details": {}
+        },
+        {
+          "name": "Leverage from Within",
+          "description": "Rather than physically escaping, Bond uses his embedded position inside the operation to start turning it against the villain.",
+          "source_works": ["Goldfinger (1964)", "Licence to Kill (1989)"],
+          "era": "cross-era",
+          "tone": "tense procedural",
+          "details": {}
+        },
+        {
+          "name": "Turning a Captured Ally or Henchman",
+          "description": "Someone on the villain's side switches allegiance at the critical moment, tipping the balance in Bond's favour.",
+          "source_works": ["Goldfinger (1964, Pussy Galore)", "Moonraker (1979, Jaws)"],
+          "era": "cross-era",
+          "tone": "redemptive",
           "details": {}
         }
       ]
@@ -274,6 +402,22 @@
           "source_works": ["On Her Majesty's Secret Service (1969)", "Casino Royale (novel, emotional register)"],
           "era": "Lazenby / Fleming",
           "tone": "tragic",
+          "details": {}
+        },
+        {
+          "name": "Bittersweet / Ironic Coda",
+          "description": "The threat is closed out, but the ending stays ambiguous or unresolved rather than clean - a cost is implied, not shown.",
+          "source_works": ["From Russia with Love (novel, unresolved poisoning)"],
+          "era": "Fleming",
+          "tone": "ambiguous",
+          "details": {}
+        },
+        {
+          "name": "Institutional Reset Coda",
+          "description": "Bond, having gone rogue or lost official standing earlier in the story, is quietly reinstated - closure comes through renewed institutional trust rather than romance.",
+          "source_works": ["Licence to Kill (1989, implied reinstatement)"],
+          "era": "Dalton",
+          "tone": "restrained",
           "details": {}
         }
       ]

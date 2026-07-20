@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Scusefingers — Assignment</title>
+<title>Scusefingers — Narrative construction</title>
 <style>
   :root{
     --govuk-blue:#1d70b8;
@@ -42,35 +42,22 @@
   .skip-link:focus{left:0;}
 
   /* header */
-  .crown-bar{
-    background:var(--govuk-black);
-    padding:10px 0;
-  }
-  .crown-bar-inner{
-    max-width:1020px;margin:0 auto;padding:0 15px;
-    display:flex;align-items:center;gap:8px;
-  }
+  .crown-bar{background:var(--govuk-black);padding:10px 0;}
+  .crown-bar-inner{max-width:1020px;margin:0 auto;padding:0 15px;display:flex;align-items:center;gap:8px;}
   .brand-mark{
     width:30px;height:30px;flex:none;background:#ffffff;color:var(--govuk-black);
-    display:flex;align-items:center;justify-content:center;font-weight:700;font-size:16px;
-    border-radius:4px;
+    display:flex;align-items:center;justify-content:center;font-weight:700;font-size:16px;border-radius:4px;
   }
-  .crown-bar .service-name{
-    color:#ffffff;font-size:24px;font-weight:700;text-decoration:none;letter-spacing:0.5px;
-  }
-  .org-bar{
-    background:#ffffff;border-bottom:10px solid var(--govuk-blue);
-  }
+  .crown-bar .service-name{color:#ffffff;font-size:24px;font-weight:700;text-decoration:none;letter-spacing:0.5px;}
+  .org-bar{background:#ffffff;border-bottom:10px solid var(--govuk-blue);}
   .org-bar-inner{
     max-width:1020px;margin:0 auto;padding:12px 15px;
-    display:flex;justify-content:space-between;align-items:center;
-    flex-wrap:wrap;gap:8px;
+    display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;
   }
   .org-bar .title{font-size:16px;font-weight:700;color:var(--govuk-black);}
   .official-tag{
     display:inline-block;background:var(--govuk-black);color:#fff;
-    font-size:12px;font-weight:700;letter-spacing:1px;padding:3px 8px;
-    text-transform:uppercase;
+    font-size:12px;font-weight:700;letter-spacing:1px;padding:3px 8px;text-transform:uppercase;
   }
 
   .phase-banner{background:var(--govuk-black);color:#fff;}
@@ -88,44 +75,34 @@
   .caption{color:var(--govuk-dark-grey);font-size:19px;display:block;margin-bottom:5px;}
   p.lede{font-size:19px;margin:0 0 25px;max-width:640px;}
 
-  /* task list */
-  .task-list{list-style:none;margin:0;padding:0;border-top:1px solid var(--govuk-border);}
-  .task-list li{
-    border-bottom:1px solid var(--govuk-border);
-    padding:14px 0;display:flex;justify-content:space-between;align-items:center;
+  .error-box{
+    border:4px solid var(--govuk-red);padding:14px 20px;margin:0 0 20px;max-width:640px;
+    display:none;
   }
-  .task-list .task-name a{font-size:19px;text-decoration:none;}
-  .task-list .task-name a:hover{text-decoration:underline;}
-  .task-list .task-name .num{color:var(--govuk-dark-grey);margin-right:8px;}
-  .tag{
-    display:inline-block;font-size:16px;font-weight:700;text-transform:uppercase;
-    padding:4px 10px;letter-spacing:0.5px;min-width:110px;text-align:center;
-  }
-  .tag-not-started{background:var(--govuk-light-grey);color:var(--govuk-black);border:2px solid var(--govuk-mid-grey);}
-  .tag-in-progress{background:#1d70b8;color:#fff;}
-  .tag-completed{background:var(--govuk-green);color:#fff;}
-  .tag-locked{background:#ffffff;color:var(--govuk-dark-grey);border:2px solid var(--govuk-mid-grey);}
+  .error-box.show{display:block;}
+  .error-box p{margin:0;font-weight:700;color:var(--govuk-red);}
 
   /* fieldset / radios */
   fieldset{border:0;margin:0 0 30px;padding:0;}
-  legend{padding:0;margin-bottom:20px;}
+  legend{padding:0;margin-bottom:20px;width:100%;}
   legend h1{margin:0;}
   .option{
     border:1px solid var(--govuk-border);
     padding:16px 20px;margin-bottom:12px;
-    display:flex;gap:14px;align-items:flex-start;
-    cursor:pointer;
+    display:flex;gap:14px;align-items:flex-start;cursor:pointer;
   }
   .option:hover{border-color:var(--govuk-black);}
-  .option input[type=radio]{
-    width:26px;height:26px;margin-top:2px;flex:none;accent-color:var(--govuk-black);
-  }
+  .option input[type=radio]{width:26px;height:26px;margin-top:2px;flex:none;accent-color:var(--govuk-black);}
   .option .label-title{font-weight:700;font-size:19px;display:block;}
   .option .label-desc{color:var(--govuk-dark-grey);font-size:16px;margin-top:4px;display:block;}
-  .meta-row{margin-top:8px;display:flex;gap:8px;flex-wrap:wrap;}
+  .meta-row{margin-top:8px;display:flex;gap:8px;flex-wrap:wrap;align-items:center;}
   .meta-tag{
     font-size:13px;background:var(--govuk-light-grey);color:var(--govuk-black);
     padding:2px 8px;border:1px solid var(--govuk-mid-grey);font-weight:700;
+  }
+  .suggested-tag{
+    font-size:13px;background:var(--govuk-blue);color:#fff;
+    padding:2px 8px;font-weight:700;
   }
 
   .govuk-button{
@@ -139,10 +116,10 @@
     background:var(--govuk-light-grey);color:var(--govuk-black);box-shadow:0 2px 0 #929191;
   }
   .govuk-button-secondary:hover{background:#dbdad9;}
+  .button-row{display:flex;gap:12px;flex-wrap:wrap;align-items:center;}
+  .back-link{display:inline-block;margin-bottom:20px;font-weight:700;}
 
-  aside .panel{
-    background:var(--govuk-light-grey);padding:20px;
-  }
+  aside .panel{background:var(--govuk-light-grey);padding:20px;}
   aside h2{font-size:16px;margin:0 0 10px;font-weight:700;}
   aside p{font-size:16px;color:var(--govuk-dark-grey);margin:0 0 10px;}
   .spine-item{
@@ -150,14 +127,42 @@
     border-bottom:1px solid var(--govuk-mid-grey);font-size:16px;flex-wrap:wrap;gap:6px;
   }
   .spine-item:last-child{border-bottom:0;}
-  .dot{width:10px;height:10px;border-radius:50%;display:inline-block;margin-right:8px;}
+  .dot{width:10px;height:10px;border-radius:50%;display:inline-block;margin-right:8px;flex:none;}
   .dot-done{background:var(--govuk-green);}
   .dot-active{background:var(--govuk-blue);}
   .dot-pending{background:var(--govuk-mid-grey);}
+  .tag{
+    display:inline-block;font-size:14px;font-weight:700;text-transform:uppercase;
+    padding:3px 8px;letter-spacing:0.5px;min-width:96px;text-align:center;flex:none;
+  }
+  .tag-not-started{background:var(--govuk-light-grey);color:var(--govuk-black);border:2px solid var(--govuk-mid-grey);}
+  .tag-in-progress{background:var(--govuk-blue);color:#fff;}
+  .tag-completed{background:var(--govuk-green);color:#fff;}
+
+  /* summary / check your answers */
+  .summary-list{list-style:none;margin:0 0 30px;padding:0;border-top:1px solid var(--govuk-border);}
+  .summary-list li{
+    border-bottom:1px solid var(--govuk-border);padding:14px 0;
+    display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;
+  }
+  .summary-list .phase-label{color:var(--govuk-dark-grey);font-size:16px;display:block;}
+  .summary-list .phase-choice{font-weight:700;font-size:19px;}
+  .summary-list a.change{white-space:nowrap;}
+
+  /* output */
+  .confirmation-panel{
+    background:var(--govuk-green);color:#fff;padding:24px 20px;margin:0 0 30px;text-align:center;
+  }
+  .confirmation-panel h1{color:#fff;margin:0 0 6px;}
+  .confirmation-panel p{color:#fff;margin:0;max-width:none;}
+  .story-para{margin:0 0 20px;max-width:none;}
+  .story-para .beat-label{display:block;font-weight:700;color:var(--govuk-dark-grey);font-size:14px;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:4px;}
+  .warning-box{border:4px solid var(--govuk-amber, #f47738);padding:14px 20px;margin:0 0 25px;background:#fff8f2;}
+  .warning-box p{margin:0 0 6px;}
+  .warning-box p:last-child{margin-bottom:0;}
 
   footer{
-    border-top:1px solid var(--govuk-border);margin-top:60px;padding:30px 0;
-    background:var(--govuk-light-grey);
+    border-top:1px solid var(--govuk-border);margin-top:60px;padding:30px 0;background:var(--govuk-light-grey);
   }
   footer .inner{max-width:1020px;margin:0 auto;padding:0 15px;font-size:14px;color:var(--govuk-dark-grey);
     display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;}
@@ -183,108 +188,412 @@
   </div>
 
   <div class="phase-banner">
-    <nav class="breadcrumb" aria-label="Breadcrumb"><a href="index.html">Home</a> &nbsp;›&nbsp; <a href="index.html">Narrative construction</a> &nbsp;›&nbsp; <span aria-current="page">Assignment</span></nav>
+    <nav class="breadcrumb" aria-label="Breadcrumb" id="breadcrumb"></nav>
   </div>
 
   <div class="wrapper">
     <div class="grid">
 
-      <main id="main-content">
-        <span class="caption">Case reference BOND-0742</span>
-        <form>
-          <fieldset>
-            <legend>
-              <h1>What triggers this operation?</h1>
-              <p class="lede">This locks the mission origin for the rest of the narrative. Choose the option that best matches the tone of story you want to build.</p>
-            </legend>
-
-            <label class="option">
-              <input type="radio" name="assignment" checked>
-              <span>
-                <span class="label-title">Official M briefing — missing agents</span>
-                <span class="label-desc">M reports MI6 operatives have gone dark in a specific region and assigns Bond to find out why.</span>
-                <span class="meta-row">
-                  <span class="meta-tag">Dr. No</span>
-                  <span class="meta-tag">Connery era</span>
-                  <span class="meta-tag">Procedural tone</span>
-                </span>
-              </span>
-            </label>
-
-            <label class="option">
-              <input type="radio" name="assignment">
-              <span>
-                <span class="label-title">Honey-trap bait, recognised as a trap</span>
-                <span class="label-desc">An enemy service dangles a defector and a valuable object as bait; Bond is sent in with eyes open.</span>
-                <span class="meta-row">
-                  <span class="meta-tag">From Russia with Love</span>
-                  <span class="meta-tag">The Living Daylights</span>
-                  <span class="meta-tag">Tense procedural</span>
-                </span>
-              </span>
-            </label>
-
-            <label class="option">
-              <input type="radio" name="assignment">
-              <span>
-                <span class="label-title">Stolen WMD ultimatum</span>
-                <span class="label-desc">A criminal organisation steals a weapon of mass consequence and issues a ransom threat.</span>
-                <span class="meta-row">
-                  <span class="meta-tag">Thunderball</span>
-                  <span class="meta-tag">Octopussy</span>
-                  <span class="meta-tag">High-stakes thriller</span>
-                </span>
-              </span>
-            </label>
-
-            <label class="option">
-              <input type="radio" name="assignment">
-              <span>
-                <span class="label-title">Personal vendetta — no institutional sanction</span>
-                <span class="label-desc">A villain harms someone close to Bond directly; Bond acts without official authorisation.</span>
-                <span class="meta-row">
-                  <span class="meta-tag">Licence to Kill</span>
-                  <span class="meta-tag">Dalton era</span>
-                  <span class="meta-tag">Grim, personal</span>
-                </span>
-              </span>
-            </label>
-
-            <label class="option">
-              <input type="radio" name="assignment">
-              <span>
-                <span class="label-title">Compromised Bond as the initial threat</span>
-                <span class="label-desc">Bond himself is brainwashed or discredited and must be deprogrammed before facing the real villain.</span>
-                <span class="meta-row">
-                  <span class="meta-tag">The Man with the Golden Gun (novel)</span>
-                  <span class="meta-tag">Psychological</span>
-                </span>
-              </span>
-            </label>
-
-          </fieldset>
-
-          <button class="govuk-button" type="button">Save and continue</button>
-        </form>
-      </main>
+      <main id="main-content"></main>
 
       <aside>
         <div class="panel">
           <h2>Story spine</h2>
-          <div class="spine-item"><span><span class="dot dot-active"></span>1. Assignment</span><span class="tag tag-in-progress">In progress</span></div>
-          <div class="spine-item"><span><span class="dot dot-pending"></span>2. Reconnaissance</span><span class="tag tag-not-started">Not started</span></div>
-          <div class="spine-item"><span><span class="dot dot-pending"></span>3. First contact</span><span class="tag tag-not-started">Not started</span></div>
-          <div class="spine-item"><span><span class="dot dot-pending"></span>4. Escalation</span><span class="tag tag-not-started">Not started</span></div>
-          <div class="spine-item"><span><span class="dot dot-pending"></span>5. Confrontation</span><span class="tag tag-locked">Locked</span></div>
-          <div class="spine-item"><span><span class="dot dot-pending"></span>6. Escape / turn</span><span class="tag tag-locked">Locked</span></div>
-          <div class="spine-item"><span><span class="dot dot-pending"></span>7. Final assault</span><span class="tag tag-locked">Locked</span></div>
-          <div class="spine-item"><span><span class="dot dot-pending"></span>8. Resolution</span><span class="tag tag-locked">Locked</span></div>
-          <p style="margin-top:14px;">Phases 5 and 7 lock in once phase 1 is confirmed, since later options are filtered by mission origin.</p>
+          <div id="spine-list"></div>
         </div>
       </aside>
 
     </div>
   </div>
+
+  <footer>
+    <div class="inner">
+      <span>Scusefingers — Bond narrative construction service</span>
+      <span>© Scusefingers</span>
+    </div>
+  </footer>
+
+<script>
+(function(){
+  "use strict";
+
+  var PHASES = [
+    {
+      id:1, name:"Assignment", caption:"Case reference BOND-0742",
+      question:"What triggers this operation?",
+      lede:"This locks the mission origin for the rest of the narrative. Choose the option that best matches the tone of story you want to build.",
+      options:[
+        {title:"Official M briefing — missing agents", desc:"M reports MI6 operatives have gone dark in a specific region and assigns Bond to find out why.", tags:["Dr. No","Connery era","Procedural tone"], tone:"procedural"},
+        {title:"Honey-trap bait, recognised as a trap", desc:"An enemy service dangles a defector and a valuable object as bait; Bond is sent in with eyes open.", tags:["From Russia with Love","The Living Daylights","Tense procedural"], tone:"tense procedural"},
+        {title:"Stolen WMD ultimatum", desc:"A criminal organisation steals a weapon of mass consequence and issues a ransom threat.", tags:["Thunderball","Octopussy","High-stakes thriller"], tone:"high-stakes thriller"},
+        {title:"Personal vendetta — no institutional sanction", desc:"A villain harms someone close to Bond directly; Bond acts without official authorisation.", tags:["Licence to Kill","Dalton era","Grim, personal"], tone:"grim, personal"},
+        {title:"Compromised Bond as the initial threat", desc:"Bond himself is brainwashed or discredited and must be deprogrammed before facing the real villain.", tags:["The Man with the Golden Gun (novel)","Psychological"], tone:"psychological"}
+      ]
+    },
+    {
+      id:2, name:"Reconnaissance", caption:"Phase 2 of 8",
+      question:"How does Bond gather intel on the ground?",
+      lede:"Choose how Bond arrives and who helps him map the terrain before he makes contact.",
+      options:[
+        {title:"Station chief / local contact network", desc:"Bond works with an established local ally to map the terrain before contact.", tags:["Dr. No","From Russia with Love","For Your Eyes Only"], tone:"procedural"},
+        {title:"Rival intelligence contact", desc:"A foreign agent or rival service operative supplies intel, under a fragile truce that could break at any moment.", tags:["From Russia with Love","The Spy Who Loved Me"], tone:"tense procedural"},
+        {title:"Underworld contact", desc:"A criminal or ex-agent with underworld ties trades information for money or favour, ambiguous loyalties throughout.", tags:["For Your Eyes Only"], tone:"grounded"},
+        {title:"Guerrilla / insurgent ally network", desc:"Bond allies with an irregular armed group who know the terrain better than any official contact could.", tags:["The Living Daylights"], tone:"Cold War plausible"},
+        {title:"Comic local liaison", desc:"A colourful, over-eager local contact provides intel wrapped in broad comic relief.", tags:["Live and Let Die","Octopussy"], tone:"broad comedy"}
+      ]
+    },
+    {
+      id:3, name:"First contact", caption:"Phase 3 of 8",
+      question:"How does Bond first brush against the villain's world?",
+      lede:"Pick the setting where Bond gets close to the operation without full exposure.",
+      options:[
+        {title:"Competitive game as reconnaissance", desc:"Cards, golf, or another game of skill lets Bond observe and needle the villain in a controlled social setting.", tags:["Goldfinger","Casino Royale"], tone:"tense-social"},
+        {title:"Society party or gala infiltration", desc:"Bond talks his way into a lavish party or auction that doubles as the villain's social front.", tags:["Thunderball","Octopussy"], tone:"glamorous"},
+        {title:"Undercover professional cover", desc:"Bond approaches under a false professional identity that gets him inside without suspicion.", tags:["On Her Majesty's Secret Service"], tone:"restrained"},
+        {title:"Physical reconnaissance of the villain's facility", desc:"Bond conducts a direct, dangerous recon of the operation itself — diving, climbing, or infiltrating a site under cover of night.", tags:["Thunderball","For Your Eyes Only"], tone:"physical, grounded"},
+        {title:"Direct criminal transaction observed", desc:"Bond witnesses or intercepts a smuggling drop or deal, getting his first hard evidence of the operation's scale.", tags:["Live and Let Die","Licence to Kill"], tone:"grounded"}
+      ]
+    },
+    {
+      id:4, name:"Escalation", caption:"Phase 4 of 8",
+      question:"How does the villain's side move against Bond?",
+      lede:"This is where the tone is set — the attempt on Bond can be visceral and cruel, or stylised and survivable by design.",
+      options:[
+        {title:"Assassination attempt via trusted ally", desc:"Someone Bond has reason to trust turns out to be the threat, revealed mid-escalation.", tags:["From Russia with Love","The Spy Who Loved Me"], tone:"suspense"},
+        {title:"Physical ordeal or creature scare", desc:"A staged brush with danger — a planted creature, a booby trap — tests Bond's nerve rather than aiming to kill him outright.", tags:["Dr. No","Live and Let Die"], tone:"visceral"},
+        {title:"Attack on Bond's support network", desc:"The villain strikes at someone close to Bond rather than Bond directly, raising the personal stakes.", tags:["Licence to Kill"], tone:"grim"},
+        {title:"Surveillance blown, chase sequence", desc:"Bond's cover is compromised and a car, boat, or ski chase follows as the villain's people try to run him down.", tags:["On Her Majesty's Secret Service","Live and Let Die"], tone:"kinetic"},
+        {title:"Poisoning or drugging attempt", desc:"An attempt to incapacitate Bond quietly, at a dinner or social event, rather than through open violence.", tags:["Dr. No","Thunderball"], tone:"tense-social"}
+      ]
+    },
+    {
+      id:5, name:"Confrontation", caption:"Phase 5 of 8",
+      question:"How is Bond captured, and how is the scheme revealed?",
+      lede:"The load-bearing scene of the whole story. Options matching your phase 1 mission origin are marked as a suggested pairing.",
+      options:[
+        {title:"Recruit-from-within reveal", desc:"The villain, instead of killing Bond outright, folds him into the operation, disclosing the plan as part of recruiting or testing his usefulness.", tags:["Goldfinger","Licence to Kill"], tone:"tense, dramatic-irony"},
+        {title:"Dinner-table monologue in the lair", desc:"Bond is captured and hosted while the villain explains the scheme at length, savouring the reveal.", tags:["Dr. No","You Only Live Twice"], tone:"theatrical"},
+        {title:"Endurance test / torture as confrontation", desc:"The villain confronts Bond not with words but with a physical ordeal that itself reveals the villain's nature.", tags:["Casino Royale","Goldfinger","Licence to Kill"], tone:"visceral"},
+        {title:"Ambiguous threat without full capture", desc:"Bond confronts the villain's agent, not the villain personally, and the scheme is only partially revealed.", tags:["From Russia with Love"], tone:"understated suspense"}
+      ]
+    },
+    {
+      id:6, name:"Escape / turn", caption:"Phase 6 of 8",
+      question:"How does Bond break free and turn the tables?",
+      lede:"Choose how the story pivots from Bond-as-target to Bond-as-threat.",
+      options:[
+        {title:"Gadget-enabled escape", desc:"A previously established gadget, or one improvised on the spot, provides the means of escape.", tags:["Goldfinger","The Spy Who Loved Me","Moonraker"], tone:"varies"},
+        {title:"Ally-assisted rescue", desc:"A local or institutional ally intervenes at the right moment to pull Bond out of danger.", tags:["From Russia with Love","Dr. No"], tone:"procedural"},
+        {title:"Improvised environmental escape", desc:"Bond escapes using nothing but his wits and whatever the immediate environment offers — no gadget, no rescue.", tags:["Casino Royale","Licence to Kill","For Your Eyes Only"], tone:"grounded"},
+        {title:"Leverage from within", desc:"Rather than physically escaping, Bond uses his embedded position inside the operation to start turning it against the villain.", tags:["Goldfinger","Licence to Kill"], tone:"tense procedural"},
+        {title:"Turning a captured ally or henchman", desc:"Someone on the villain's side switches allegiance at the critical moment, tipping the balance in Bond's favour.", tags:["Goldfinger","Moonraker"], tone:"redemptive"}
+      ]
+    },
+    {
+      id:7, name:"Final assault", caption:"Phase 7 of 8",
+      question:"How is the villain's operation confronted and destroyed?",
+      lede:"The climax — choose the scale and shape of the final confrontation. Options matching your phase 1 mission origin are marked as a suggested pairing.",
+      options:[
+        {title:"Allied mass assault on the lair", desc:"An allied force storms the villain's base in a large multi-combatant battle while Bond handles the villain personally.", tags:["You Only Live Twice","The Spy Who Loved Me","Moonraker","Octopussy"], tone:"spectacle"},
+        {title:"One-on-one duel", desc:"The climax is a formal duel between Bond and a single, skilled adversary, without a mass battle.", tags:["The Man with the Golden Gun"], tone:"intimate, high-tension"},
+        {title:"Vehicular mass finale", desc:"The climax plays out across a chase or battle among vehicles rather than a fixed lair assault.", tags:["Thunderball","On Her Majesty's Secret Service","Licence to Kill"], tone:"kinetic"},
+        {title:"Infiltration-sabotage from within", desc:"Having been embedded in the operation, Bond sabotages the plan from inside as it's underway, rather than mounting an external assault.", tags:["Goldfinger","Licence to Kill"], tone:"tense procedural"}
+      ]
+    },
+    {
+      id:8, name:"Resolution", caption:"Phase 8 of 8",
+      question:"How does the story close?",
+      lede:"Choose how tension resolves once the threat is gone.",
+      options:[
+        {title:"Triumphant romantic coda", desc:"Bond and his companion are alone together, danger past, ending on wit or romance.", tags:["Dr. No","Goldfinger"], tone:"triumphant"},
+        {title:"Tragic coda", desc:"Victory over the villain is undercut by a personal loss inflicted in the final scene.", tags:["On Her Majesty's Secret Service"], tone:"tragic"},
+        {title:"Bittersweet / ironic coda", desc:"The threat is closed out, but the ending stays ambiguous or unresolved rather than clean — a cost is implied, not shown.", tags:["From Russia with Love (novel)"], tone:"ambiguous"},
+        {title:"Institutional reset coda", desc:"Bond, having gone rogue or lost official standing earlier in the story, is quietly reinstated — closure comes through renewed institutional trust rather than romance.", tags:["Licence to Kill"], tone:"restrained"}
+      ]
+    }
+  ];
+
+  var STORAGE_KEY = "scusefingersBondBuilder";
+  var state = loadState();
+
+  function loadState(){
+    try{
+      var raw = localStorage.getItem(STORAGE_KEY);
+      if(raw) return JSON.parse(raw);
+    }catch(e){}
+    return {current:1, answers:{}};
+  }
+  function saveState(){
+    try{ localStorage.setItem(STORAGE_KEY, JSON.stringify(state)); }catch(e){}
+  }
+
+  function phaseById(id){
+    for(var i=0;i<PHASES.length;i++){ if(PHASES[i].id===id) return PHASES[i]; }
+    return null;
+  }
+
+  function escapeHtml(s){
+    return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");
+  }
+
+  function setBreadcrumb(currentLabel){
+    document.getElementById("breadcrumb").innerHTML =
+      '<a href="index.html">Home</a> &nbsp;›&nbsp; <a href="#" id="bc-restart">Narrative construction</a> &nbsp;›&nbsp; <span aria-current="page">' + escapeHtml(currentLabel) + '</span>';
+    var restart = document.getElementById("bc-restart");
+    if(restart){
+      restart.addEventListener("click", function(e){
+        e.preventDefault();
+      });
+    }
+  }
+
+  function renderSpine(){
+    var html = "";
+    PHASES.forEach(function(p){
+      var status, tagClass, dotClass;
+      if(state.current === "summary" || state.current === "output" || (typeof state.current === "number" && p.id < state.current) || (state.answers[p.id] !== undefined && typeof state.current === "number" && p.id < state.current)){
+        status = "Completed"; tagClass = "tag-completed"; dotClass = "dot-done";
+      } else if(state.current === p.id){
+        status = "In progress"; tagClass = "tag-in-progress"; dotClass = "dot-active";
+      } else if(state.answers[p.id] !== undefined){
+        status = "Completed"; tagClass = "tag-completed"; dotClass = "dot-done";
+      } else {
+        status = "Not started"; tagClass = "tag-not-started"; dotClass = "dot-pending";
+      }
+      html += '<div class="spine-item"><span><span class="dot '+dotClass+'"></span>'+p.id+'. '+escapeHtml(p.name)+'</span><span class="tag '+tagClass+'">'+status+'</span></div>';
+    });
+    if(state.current === "summary" || state.current === "output"){
+      html += '<p style="margin-top:14px;">All eight phases are complete. Review and generate the story outline.</p>';
+    } else {
+      html += '<p style="margin-top:14px;">Phases 5 and 7 highlight a suggested pairing based on your phase 1 choice.</p>';
+    }
+    document.getElementById("spine-list").innerHTML = html;
+  }
+
+  function suggestedIndexFor(phase){
+    var p1 = state.answers[1];
+    if(p1 === undefined) return -1;
+    var p1tone = phaseById(1).options[p1].tone;
+    var best = -1;
+    phase.options.forEach(function(opt, idx){
+      if(best === -1 && (opt.tone === p1tone || opt.tone.indexOf(p1tone.split(",")[0]) !== -1 || p1tone.indexOf(opt.tone.split(",")[0]) !== -1)){
+        best = idx;
+      }
+    });
+    return best;
+  }
+
+  function renderPhase(id){
+    var phase = phaseById(id);
+    setBreadcrumb(phase.name);
+    document.title = "Scusefingers — " + phase.name;
+
+    var suggested = (id === 5 || id === 7) ? suggestedIndexFor(phase) : -1;
+    var existing = state.answers[id];
+
+    var optsHtml = "";
+    phase.options.forEach(function(opt, idx){
+      var checked = (existing === idx) ? " checked" : "";
+      var tagsHtml = opt.tags.map(function(t){ return '<span class="meta-tag">'+escapeHtml(t)+'</span>'; }).join("");
+      var suggestedBadge = (idx === suggested) ? '<span class="suggested-tag">Suggested pairing</span>' : "";
+      optsHtml += '<label class="option">' +
+        '<input type="radio" name="phaseOption" value="'+idx+'"'+checked+'>' +
+        '<span>' +
+          '<span class="label-title">'+escapeHtml(opt.title)+'</span>' +
+          '<span class="label-desc">'+escapeHtml(opt.desc)+'</span>' +
+          '<span class="meta-row">'+tagsHtml+suggestedBadge+'</span>' +
+        '</span>' +
+      '</label>';
+    });
+
+    var backHtml = (id > 1) ? '<a href="#" class="back-link" id="back-link">&larr; Back</a>' : "";
+
+    document.getElementById("main-content").innerHTML =
+      '<span class="caption">'+escapeHtml(phase.caption)+'</span>' +
+      backHtml +
+      '<div class="error-box" id="error-box"><p>Select an option to continue</p></div>' +
+      '<form id="phase-form">' +
+        '<fieldset>' +
+          '<legend>' +
+            '<h1>'+escapeHtml(phase.question)+'</h1>' +
+            '<p class="lede">'+escapeHtml(phase.lede)+'</p>' +
+          '</legend>' +
+          optsHtml +
+        '</fieldset>' +
+        '<div class="button-row">' +
+          '<button class="govuk-button" type="submit">Save and continue</button>' +
+        '</div>' +
+      '</form>';
+
+    var backLink = document.getElementById("back-link");
+    if(backLink){
+      backLink.addEventListener("click", function(e){
+        e.preventDefault();
+        state.current = id - 1;
+        saveState(); render();
+      });
+    }
+
+    document.getElementById("phase-form").addEventListener("submit", function(e){
+      e.preventDefault();
+      var checkedInput = document.querySelector('input[name="phaseOption"]:checked');
+      if(!checkedInput){
+        document.getElementById("error-box").classList.add("show");
+        window.scrollTo(0,0);
+        return;
+      }
+      state.answers[id] = parseInt(checkedInput.value, 10);
+      state.current = (id < 8) ? id + 1 : "summary";
+      saveState();
+      render();
+      window.scrollTo(0,0);
+    });
+
+    renderSpine();
+  }
+
+  function renderSummary(){
+    setBreadcrumb("Check your answers");
+    document.title = "Scusefingers — Check your answers";
+
+    var itemsHtml = "";
+    PHASES.forEach(function(p){
+      var idx = state.answers[p.id];
+      var choiceText = (idx !== undefined) ? p.options[idx].title : "Not answered";
+      itemsHtml += '<li>' +
+        '<span><span class="phase-label">'+p.id+'. '+escapeHtml(p.name)+'</span>' +
+        '<span class="phase-choice">'+escapeHtml(choiceText)+'</span></span>' +
+        '<a class="change" href="#" data-phase="'+p.id+'">Change<span class="sr-only"> '+escapeHtml(p.name)+'</span></a>' +
+      '</li>';
+    });
+
+    document.getElementById("main-content").innerHTML =
+      '<span class="caption">Case reference BOND-0742</span>' +
+      '<h1>Check your answers</h1>' +
+      '<p class="lede">Review your choices across all eight phases before generating the story outline. You can change any answer.</p>' +
+      '<ul class="summary-list">'+itemsHtml+'</ul>' +
+      '<div class="button-row">' +
+        '<button class="govuk-button" id="generate-btn" type="button">Generate story</button>' +
+        '<button class="govuk-button govuk-button-secondary" id="restart-btn" type="button">Start over</button>' +
+      '</div>';
+
+    var changeLinks = document.querySelectorAll("a.change");
+    changeLinks.forEach(function(a){
+      a.addEventListener("click", function(e){
+        e.preventDefault();
+        state.current = parseInt(a.getAttribute("data-phase"), 10);
+        saveState(); render();
+        window.scrollTo(0,0);
+      });
+    });
+
+    document.getElementById("generate-btn").addEventListener("click", function(){
+      state.current = "output";
+      saveState(); render();
+      window.scrollTo(0,0);
+    });
+    document.getElementById("restart-btn").addEventListener("click", function(){
+      if(confirm("Start over? This clears all eight answers.")){
+        state = {current:1, answers:{}};
+        saveState(); render();
+        window.scrollTo(0,0);
+      }
+    });
+
+    renderSpine();
+  }
+
+  function buildOutlineText(){
+    var lines = [];
+    lines.push("A NEW BOND NARRATIVE — GENERATED OUTLINE");
+    lines.push("Case reference BOND-0742");
+    lines.push("");
+    PHASES.forEach(function(p){
+      var idx = state.answers[p.id];
+      var opt = p.options[idx];
+      lines.push(p.id + ". " + p.name.toUpperCase());
+      lines.push(opt.title);
+      lines.push(opt.desc);
+      lines.push("Drawn from: " + opt.tags.join(", "));
+      lines.push("");
+    });
+    return lines.join("\n");
+  }
+
+  function computeWarnings(){
+    var warnings = [];
+    var p1 = state.answers[1];
+    if(p1 === undefined) return warnings;
+    var p1tone = phaseById(1).options[p1].tone;
+    var campTones = ["broad comedy","glamorous"];
+    var grimOrigins = ["grim, personal"];
+    if(grimOrigins.indexOf(p1tone) !== -1){
+      PHASES.forEach(function(p){
+        if(p.id === 1) return;
+        var idx = state.answers[p.id];
+        if(idx === undefined) return;
+        var tone = p.options[idx].tone;
+        if(campTones.indexOf(tone) !== -1){
+          warnings.push("A personal-vendetta mission origin (phase 1) paired with a "+tone+" tone in phase "+p.id+" (“"+p.options[idx].title+"”) can undercut stakes — camp signals low risk while revenge plots need the opposite. Not a hard conflict, just worth a second look.");
+        }
+      });
+    }
+    return warnings;
+  }
+
+  function renderOutput(){
+    setBreadcrumb("Story outline");
+    document.title = "Scusefingers — Story outline";
+
+    var paras = "";
+    PHASES.forEach(function(p){
+      var idx = state.answers[p.id];
+      var opt = p.options[idx];
+      paras += '<p class="story-para"><span class="beat-label">'+p.id+'. '+escapeHtml(p.name)+'</span>' + escapeHtml(opt.desc) + '</p>';
+    });
+
+    var warnings = computeWarnings();
+    var warningsHtml = "";
+    if(warnings.length){
+      warningsHtml = '<div class="warning-box">' + warnings.map(function(w){ return '<p>'+escapeHtml(w)+'</p>'; }).join("") + '</div>';
+    }
+
+    document.getElementById("main-content").innerHTML =
+      '<div class="confirmation-panel"><h1>Your story outline is ready</h1><p>Case reference BOND-0742</p></div>' +
+      warningsHtml +
+      paras +
+      '<div class="button-row">' +
+        '<button class="govuk-button" id="download-btn" type="button">Download outline (.txt)</button>' +
+        '<button class="govuk-button govuk-button-secondary" id="edit-btn" type="button">Back to your answers</button>' +
+      '</div>';
+
+    document.getElementById("download-btn").addEventListener("click", function(){
+      var text = buildOutlineText();
+      var blob = new Blob([text], {type:"text/plain"});
+      var url = URL.createObjectURL(blob);
+      var a = document.createElement("a");
+      a.href = url; a.download = "bond-story-outline.txt";
+      document.body.appendChild(a); a.click(); document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+    });
+    document.getElementById("edit-btn").addEventListener("click", function(){
+      state.current = "summary";
+      saveState(); render();
+      window.scrollTo(0,0);
+    });
+
+    renderSpine();
+  }
+
+  function render(){
+    if(state.current === "summary"){ renderSummary(); }
+    else if(state.current === "output"){ renderOutput(); }
+    else { renderPhase(state.current); }
+  }
+
+  render();
+})();
+</script>
 
   <footer>
     <div class="inner">
