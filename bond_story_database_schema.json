@@ -1,0 +1,368 @@
+{
+  "schema_version": "1.0",
+  "notes": "Phases 1 (Inciting Threat / Assignment), 5 (Capture / Confrontation & Reveal), and 7 (Final Assault) are fully populated with real examples per the deliverable spec. Phases 2,3,4,6,8 include structural stubs (purpose + required + a starter option) ready for the same population pattern.",
+  "story_phases": [
+    {
+      "phase_id": 1,
+      "phase_name": "Inciting Threat / Assignment",
+      "purpose": "Establish a threat of real consequence and put Bond on it, whether by institutional order or personal cause.",
+      "required": true,
+      "locked_after_selection": true,
+      "options": [
+        {
+          "name": "Official M Briefing - Missing Agents",
+          "description": "M reports MI6 operatives have gone dark in a specific region; Bond is assigned to find out why.",
+          "source_works": ["Dr. No (novel)", "Dr. No (1962)"],
+          "era": "Connery",
+          "tone": "procedural",
+          "details": {
+            "authority": "M / MI6",
+            "sanction_level": "fully official",
+            "initial_threat_visibility": "obscured - Bond must discover the real scheme"
+          }
+        },
+        {
+          "name": "Honey-Trap Bait Recognized as Trap",
+          "description": "An enemy service dangles a defector and a valuable object (decoder, formula) as bait, and Bond is sent in with eyes open, knowing it's likely a trap.",
+          "source_works": ["From Russia with Love (novel)", "From Russia with Love (1963)", "The Living Daylights (1987)"],
+          "era": "mixed (Connery/Dalton)",
+          "tone": "tense procedural",
+          "details": {
+            "authority": "M / MI6",
+            "sanction_level": "fully official, eyes-open risk",
+            "initial_threat_visibility": "partially known - bait is obvious, mechanism of betrayal is not"
+          }
+        },
+        {
+          "name": "Stolen WMD Ultimatum",
+          "description": "A criminal organization steals a weapon of mass consequence (nuclear device, warheads) and issues a ransom threat against a government or the world.",
+          "source_works": ["Thunderball (novel)", "Thunderball (1965)", "The Spy Who Loved Me (1977)", "Octopussy (1983)"],
+          "era": "mixed (Connery/Moore)",
+          "tone": "high-stakes thriller",
+          "details": {
+            "authority": "M / MI6, often in concert with allied agency",
+            "sanction_level": "fully official, high urgency",
+            "initial_threat_visibility": "fully known target, unknown perpetrator location"
+          }
+        },
+        {
+          "name": "Personal Vendetta - No Institutional Sanction",
+          "description": "A villain harms Bond or someone close to him directly (maiming/killing an ally); Bond acts without, or in defiance of, official authorization.",
+          "source_works": ["Licence to Kill (1989)"],
+          "era": "Dalton",
+          "tone": "grim, personal",
+          "details": {
+            "authority": "none - Bond self-assigns",
+            "sanction_level": "unofficial / license revoked",
+            "initial_threat_visibility": "fully known villain, unknown full operation"
+          }
+        },
+        {
+          "name": "Compromised Bond as the Initial Threat",
+          "description": "Bond himself is brainwashed or discredited and must be deprogrammed/redeemed before being pointed at the real villain.",
+          "source_works": ["The Man with the Golden Gun (novel)"],
+          "era": "Fleming (novel-only)",
+          "tone": "psychological",
+          "details": {
+            "authority": "M / MI6, but trust is the plot question",
+            "sanction_level": "conditional - mission doubles as loyalty test",
+            "initial_threat_visibility": "Bond's own reliability is the initial unknown"
+          }
+        }
+      ]
+    },
+    {
+      "phase_id": 2,
+      "phase_name": "Arrival & Reconnaissance",
+      "purpose": "Bond relocates to unfamiliar territory and gathers intel through a local ally who supplies what Bond can't get alone.",
+      "required": true,
+      "locked_after_selection": false,
+      "options": [
+        {
+          "name": "Station Chief / Local Contact Network",
+          "description": "Bond works with an established local ally (station chief, foreign colleague) to map the terrain before contact.",
+          "source_works": ["Dr. No (1962)", "From Russia with Love (1963)", "For Your Eyes Only (1981)"],
+          "era": "cross-era",
+          "tone": "procedural",
+          "details": {}
+        }
+      ]
+    },
+    {
+      "phase_id": 3,
+      "phase_name": "First Contact with the Villain's World",
+      "purpose": "A social or competitive set piece brings Bond briefly into the villain's orbit without full exposure; a plot-relevant woman is introduced.",
+      "required": true,
+      "locked_after_selection": false,
+      "options": [
+        {
+          "name": "Competitive Game as Reconnaissance",
+          "description": "Cards, golf, or another game of skill lets Bond observe and needle the villain in a controlled social setting.",
+          "source_works": ["Goldfinger (novel)", "Goldfinger (1964)", "Casino Royale (novel)"],
+          "era": "cross-era",
+          "tone": "tense-social",
+          "details": {}
+        }
+      ]
+    },
+    {
+      "phase_id": 4,
+      "phase_name": "Escalation / Attempt on Bond",
+      "purpose": "The villain's side tries to eliminate, warn off, or test Bond; this scene sets the story's violence register.",
+      "required": true,
+      "locked_after_selection": false,
+      "options": [
+        {
+          "name": "Assassination Attempt via Trusted Ally",
+          "description": "Someone Bond has reason to trust turns out to be the threat, revealed mid-escalation.",
+          "source_works": ["From Russia with Love (1963)", "The Spy Who Loved Me (1977, inverted as rival-turned-ally)"],
+          "era": "cross-era",
+          "tone": "suspense",
+          "details": {}
+        }
+      ]
+    },
+    {
+      "phase_id": 5,
+      "phase_name": "Capture / Confrontation & Reveal",
+      "purpose": "Bond meets the villain directly and the full scheme is disclosed to Bond and the audience - the genre's most load-bearing beat.",
+      "required": true,
+      "locked_after_selection": true,
+      "options": [
+        {
+          "name": "Recruit-From-Within Reveal",
+          "description": "The villain, instead of killing Bond outright, folds him into the operation, disclosing the plan as part of recruiting or testing his usefulness.",
+          "source_works": ["Goldfinger (novel)", "Goldfinger (1964)", "Licence to Kill (1989)"],
+          "era": "cross-era",
+          "tone": "tense, dramatic-irony",
+          "details": {
+            "reveal_mechanism": "verbal recruitment pitch + demonstration of the plan's mechanics",
+            "bond_status": "captive-but-mobile; embedded inside the operation",
+            "narrative_function": "collapses reveal (phase 5) and turn (phase 6) into one continuous sequence"
+          }
+        },
+        {
+          "name": "Dinner-Table Monologue in the Lair",
+          "description": "Bond is captured and hosted (dinner, tour of the base) while the villain explains the scheme at length, savoring the reveal.",
+          "source_works": ["Dr. No (novel)", "Dr. No (1962)", "You Only Live Twice (1967)"],
+          "era": "cross-era",
+          "tone": "theatrical",
+          "details": {
+            "reveal_mechanism": "extended monologue, often with visual aids (models, screens, the lair itself)",
+            "bond_status": "fully captive, no agency until phase 6",
+            "narrative_function": "maximizes spectacle and villain characterization before the turn"
+          }
+        },
+        {
+          "name": "Endurance Test / Torture as Confrontation",
+          "description": "The villain confronts Bond not with words but with a physical ordeal (torture, gauntlet, laser) that itself reveals the villain's nature.",
+          "source_works": ["Casino Royale (novel)", "Goldfinger (1964, laser scene)", "Licence to Kill (1989, near-death by decompression/shark)"],
+          "era": "cross-era",
+          "tone": "visceral",
+          "details": {
+            "reveal_mechanism": "the method of the ordeal itself characterizes the villain; scheme details may come before or after",
+            "bond_status": "captive and in immediate physical danger",
+            "narrative_function": "raises stakes viscerally rather than expositorily; often the point where tone (grim vs. stylized) is fixed for the rest of the story"
+          }
+        },
+        {
+          "name": "Ambiguous Threat Without Full Capture",
+          "description": "Bond confronts the villain's agent (not the villain personally) and the scheme is only partially revealed, leaving real ambiguity into the final act.",
+          "source_works": ["From Russia with Love (novel)", "From Russia with Love (1963)"],
+          "era": "Connery / Fleming",
+          "tone": "understated suspense",
+          "details": {
+            "reveal_mechanism": "fragmentary - full picture withheld from Bond and/or audience until later",
+            "bond_status": "at large but unknowingly compromised",
+            "narrative_function": "sustains tension into the final phases instead of resolving it at the reveal"
+          }
+        }
+      ]
+    },
+    {
+      "phase_id": 6,
+      "phase_name": "Escape / Turn",
+      "purpose": "Bond breaks free and the story pivots from reactive to proactive.",
+      "required": true,
+      "locked_after_selection": false,
+      "options": [
+        {
+          "name": "Gadget-Enabled Escape",
+          "description": "A previously established gadget (or one improvised on the spot) provides the means of escape.",
+          "source_works": ["Goldfinger (1964)", "The Spy Who Loved Me (1977)", "Moonraker (1979)"],
+          "era": "Moore-heavy but cross-era",
+          "tone": "varies",
+          "details": {}
+        }
+      ]
+    },
+    {
+      "phase_id": 7,
+      "phase_name": "Final Assault",
+      "purpose": "A large-scale confrontation destroys or defeats the villain's operational base, not just the villain personally.",
+      "required": true,
+      "locked_after_selection": false,
+      "options": [
+        {
+          "name": "Allied Mass Assault on the Lair",
+          "description": "An allied force (commandos, ninjas, local militia) storms the villain's base in a large multi-combatant battle while Bond handles the villain personally.",
+          "source_works": ["You Only Live Twice (1967)", "The Spy Who Loved Me (1977)", "Moonraker (1979)", "Octopussy (1983)"],
+          "era": "Connery-late/Moore",
+          "tone": "spectacle",
+          "details": {
+            "scale": "mass, multi-combatant",
+            "location_type": "villain's mega-lair (volcano, undersea base, space station, circus/train)",
+            "outcome_mechanism": "base destroyed by the allied force while Bond neutralizes the villain in a parallel personal confrontation"
+          }
+        },
+        {
+          "name": "One-on-One Duel",
+          "description": "The climax is a formal duel between Bond and a single, skilled adversary, without a mass battle.",
+          "source_works": ["The Man with the Golden Gun (novel)", "The Man with the Golden Gun (1974)"],
+          "era": "cross-era",
+          "tone": "intimate, high-tension",
+          "details": {
+            "scale": "single combatant",
+            "location_type": "isolated arena (funhouse, swamp)",
+            "outcome_mechanism": "direct personal victory, no supporting force required"
+          }
+        },
+        {
+          "name": "Vehicular Mass Finale",
+          "description": "The climax plays out across a chase or battle among vehicles (tanker convoy, submarines, ski chase) rather than a fixed lair assault.",
+          "source_works": ["Thunderball (1965, underwater battle)", "On Her Majesty's Secret Service (1969, ski/bobsled chase)", "Licence to Kill (1989, tanker convoy)"],
+          "era": "cross-era",
+          "tone": "kinetic",
+          "details": {
+            "scale": "medium to large, vehicle-centric",
+            "location_type": "open terrain, sea, or road network",
+            "outcome_mechanism": "villain's operation is destroyed via pursuit/destruction of moving assets rather than a static base"
+          }
+        },
+        {
+          "name": "Infiltration-Sabotage from Within",
+          "description": "Having been embedded in the operation (per a Phase 5 recruit-from-within reveal), Bond sabotages the plan from inside as it's underway, rather than mounting an external assault.",
+          "source_works": ["Goldfinger (1964, Fort Knox)", "Licence to Kill (1989, cartel operation)"],
+          "era": "cross-era",
+          "tone": "tense procedural",
+          "details": {
+            "scale": "variable, often escalates into a mass finale once sabotage is discovered",
+            "location_type": "the operation's own facility (vault, processing plant)",
+            "outcome_mechanism": "plan collapses from internal sabotage, frequently triggering a secondary mass confrontation as cover is blown"
+          }
+        }
+      ]
+    },
+    {
+      "phase_id": 8,
+      "phase_name": "Resolution / Coda",
+      "purpose": "The threat is closed out and tension releases, most often through romance, occasionally through tragedy or irony.",
+      "required": true,
+      "locked_after_selection": false,
+      "options": [
+        {
+          "name": "Triumphant Romantic Coda",
+          "description": "Bond and the Bond Girl are alone together, danger past, ending on wit or romance.",
+          "source_works": ["Dr. No (1962)", "Goldfinger (1964)", "most classic-era entries"],
+          "era": "cross-era, dominant mode",
+          "tone": "triumphant",
+          "details": {}
+        },
+        {
+          "name": "Tragic Coda",
+          "description": "Victory over the villain is undercut by a personal loss inflicted in the final scene.",
+          "source_works": ["On Her Majesty's Secret Service (1969)", "Casino Royale (novel, emotional register)"],
+          "era": "Lazenby / Fleming",
+          "tone": "tragic",
+          "details": {}
+        }
+      ]
+    }
+  ],
+  "flexible_elements": [
+    {
+      "category": "Gadgets & Q-Branch",
+      "elements": [
+        {"name": "Minimal/no gadgets - tradecraft only", "source_works": ["Casino Royale (novel)", "From Russia with Love (1963)", "Licence to Kill (1989)"], "era": "Fleming/Dalton", "tone": "grounded"},
+        {"name": "Signature vehicle gadget (ejector seat, submarine car)", "source_works": ["Goldfinger (1964)", "The Spy Who Loved Me (1977)"], "era": "Connery/Moore", "tone": "playful"},
+        {"name": "Formal Q-branch briefing scene", "source_works": ["most films from Goldfinger onward"], "era": "Connery-onward", "tone": "comic-procedural"}
+      ]
+    },
+    {
+      "category": "Signature Henchman",
+      "elements": [
+        {"name": "Silent, physically overwhelming henchman with a signature kill method", "source_works": ["Goldfinger (1964, Oddjob)", "The Spy Who Loved Me / Moonraker (Jaws)"], "era": "Connery/Moore", "tone": "iconic-menacing"},
+        {"name": "No standout henchman - villain acts directly or via anonymous force", "source_works": ["From Russia with Love (1963, Grant is closer to a co-lead antagonist)", "Licence to Kill (1989)"], "era": "cross-era", "tone": "grounded"}
+      ]
+    },
+    {
+      "category": "Villain's Scheme / MacGuffin",
+      "elements": [
+        {"name": "Nuclear/WMD ransom", "source_works": ["Thunderball", "Octopussy"], "era": "cross-era"},
+        {"name": "Theft/heist of a national resource", "source_works": ["Goldfinger (gold)"], "era": "Connery"},
+        {"name": "Corporate/technological monopoly via mass destruction", "source_works": ["A View to a Kill"], "era": "Moore"},
+        {"name": "Drug cartel revenge/personal vendetta", "source_works": ["Licence to Kill"], "era": "Dalton"},
+        {"name": "Space/orbital hijack", "source_works": ["You Only Live Twice", "Moonraker"], "era": "Connery/Moore"},
+        {"name": "Arms-for-drugs Cold War defection scheme", "source_works": ["The Living Daylights"], "era": "Dalton"}
+      ]
+    },
+    {
+      "category": "Locale",
+      "elements": [
+        {"name": "Caribbean/tropical island", "source_works": ["Dr. No", "Live and Let Die", "Licence to Kill"], "era": "cross-era"},
+        {"name": "European capital/Alps", "source_works": ["From Russia with Love", "On Her Majesty's Secret Service"], "era": "cross-era"},
+        {"name": "Space/orbital", "source_works": ["You Only Live Twice", "Moonraker"], "era": "Connery/Moore"},
+        {"name": "Asia (Hong Kong, Japan, Thailand)", "source_works": ["You Only Live Twice", "The Man with the Golden Gun"], "era": "cross-era"}
+      ]
+    },
+    {
+      "category": "Disguise / Infiltration Device",
+      "elements": [
+        {"name": "Full cultural disguise (dress, makeup, assumed identity)", "source_works": ["You Only Live Twice"], "era": "Connery"},
+        {"name": "Professional cover identity (genealogist, businessman)", "source_works": ["On Her Majesty's Secret Service"], "era": "Lazenby"},
+        {"name": "Comic costume disguise used for tension release then reveal", "source_works": ["Octopussy (clown suit)"], "era": "Moore"}
+      ]
+    },
+    {
+      "category": "Comic Relief Level",
+      "elements": [
+        {"name": "Near-zero - played straight throughout", "source_works": ["From Russia with Love (1963)", "On Her Majesty's Secret Service", "Licence to Kill"], "era": "Connery/Lazenby/Dalton"},
+        {"name": "Light, character-driven wit", "source_works": ["Dr. No", "Goldfinger"], "era": "Connery"},
+        {"name": "Broad comic set pieces and recurring comic characters (e.g. Sheriff Pepper)", "source_works": ["Live and Let Die", "The Man with the Golden Gun", "Octopussy"], "era": "Moore"}
+      ]
+    },
+    {
+      "category": "Institutional Backing",
+      "elements": [
+        {"name": "Fully sanctioned MI6 mission with Q-branch and M support throughout", "source_works": ["most classic-era entries"], "era": "cross-era, dominant"},
+        {"name": "Unofficial/rogue action, license revoked, support arrives informally if at all", "source_works": ["Licence to Kill"], "era": "Dalton"}
+      ]
+    },
+    {
+      "category": "Vehicle Chase Set Piece",
+      "elements": [
+        {"name": "Ski/snow chase", "source_works": ["On Her Majesty's Secret Service", "The Living Daylights"], "era": "cross-era"},
+        {"name": "Boat/speedboat chase", "source_works": ["Live and Let Die"], "era": "Moore"},
+        {"name": "Car chase with gadget-vehicle", "source_works": ["Goldfinger", "The Man with the Golden Gun"], "era": "cross-era"},
+        {"name": "Heavy vehicle chase (tanker, plane)", "source_works": ["The Living Daylights", "Licence to Kill"], "era": "Dalton"}
+      ]
+    }
+  ],
+  "compatibility_rules": [
+    {
+      "rule": "personal_vendetta_vs_maximal_camp",
+      "description": "A Phase 1 'Personal Vendetta' mission origin combined with a 'Broad comic set pieces' comic-relief level tends to undercut stakes, since camp tone signals low real risk while revenge plots require the opposite. Flag, do not block.",
+      "conflicting_options": ["Personal Vendetta - No Institutional Sanction", "Broad comic set pieces and recurring comic characters"]
+    },
+    {
+      "rule": "no_institutional_backing_vs_heavy_gadgets",
+      "description": "Withdrawing institutional backing (Phase 1) while retaining heavy Q-branch gadget dependence creates a credibility gap, since gadgets imply institutional support the story has withdrawn. Flag, do not block.",
+      "conflicting_options": ["Personal Vendetta - No Institutional Sanction", "Signature vehicle gadget (ejector seat, submarine car)"]
+    },
+    {
+      "rule": "tragic_coda_vs_recurring_henchman_camp",
+      "description": "A tragic Phase 8 coda paired with a highly stylized/comic recurring henchman can feel tonally split. Historically rare but not attempted in the corpus - flag as an untested combination rather than a proven conflict.",
+      "conflicting_options": ["Tragic Coda", "Silent, physically overwhelming henchman with a signature kill method"]
+    }
+  ]
+}

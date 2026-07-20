@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Scusefingers — Bond narrative construction service</title>
 <style>
   :root{
@@ -28,14 +28,20 @@
   a:visited{color:#4c2c92;}
   a:hover{color:#003078;}
   a:focus, button:focus{
-    outline:3px solid var(--govuk-yellow);
-    outline-offset:0;
-    background:var(--govuk-yellow);
+    outline:3px solid rgba(0,0,0,0);
+    background-color:var(--govuk-yellow);
     color:var(--govuk-focus-text);
+    box-shadow:0 -2px var(--govuk-yellow), 0 4px var(--govuk-black);
+    text-decoration:none;
   }
+  .skip-link{
+    position:absolute;left:-9999px;top:0;background:var(--govuk-yellow);color:var(--govuk-black);
+    padding:10px 15px;font-weight:700;z-index:100;
+  }
+  .skip-link:focus{left:0;}
 
   .crown-bar{background:var(--govuk-black);padding:10px 0;}
-  .crown-bar-inner{max-width:960px;margin:0 auto;padding:0 15px;display:flex;align-items:center;gap:8px;}
+  .crown-bar-inner{max-width:1020px;margin:0 auto;padding:0 15px;display:flex;align-items:center;gap:8px;}
   .brand-mark{
     width:30px;height:30px;flex:none;background:#ffffff;color:var(--govuk-black);
     display:flex;align-items:center;justify-content:center;font-weight:700;font-size:16px;
@@ -44,7 +50,7 @@
   .crown-bar .service-name{color:#ffffff;font-size:24px;font-weight:700;text-decoration:none;letter-spacing:0.5px;}
 
   .org-bar{background:#ffffff;border-bottom:10px solid var(--govuk-blue);}
-  .org-bar-inner{max-width:960px;margin:0 auto;padding:12px 15px;display:flex;justify-content:space-between;align-items:center;}
+  .org-bar-inner{max-width:1020px;margin:0 auto;padding:12px 15px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;}
   .org-bar .title{font-size:16px;font-weight:700;color:var(--govuk-black);}
   .official-tag{
     display:inline-block;background:var(--govuk-black);color:#fff;
@@ -52,19 +58,22 @@
   }
 
   .beta-banner{background:var(--govuk-light-grey);border-bottom:1px solid var(--govuk-border);}
-  .beta-banner-inner{max-width:960px;margin:0 auto;padding:10px 15px;font-size:16px;}
+  .beta-banner-inner{max-width:1020px;margin:0 auto;padding:10px 15px;font-size:16px;}
   .beta-tag{
     display:inline-block;background:var(--govuk-blue);color:#fff;font-size:14px;font-weight:700;
     text-transform:uppercase;padding:2px 8px;margin-right:8px;letter-spacing:0.5px;
   }
 
-  .wrapper{max-width:960px;margin:0 auto;padding:40px 15px 60px;}
-  .grid{display:grid;grid-template-columns:1fr 320px;gap:40px;}
-  @media (max-width:700px){.grid{grid-template-columns:1fr;}}
+  .wrapper{max-width:1020px;margin:0 auto;padding:20px 15px 60px;}
+  .grid{display:grid;grid-template-columns:1fr;gap:40px;}
+  @media (min-width:640px){.wrapper{padding:40px 15px 60px;}}
+  @media (min-width:769px){.grid{grid-template-columns:1fr 320px;}}
 
   .caption{color:var(--govuk-dark-grey);font-size:19px;display:block;margin-bottom:5px;}
-  h1{font-size:40px;font-weight:700;margin:0 0 20px;line-height:1.15;}
-  h2{font-size:24px;font-weight:700;margin:30px 0 15px;}
+  h1{font-size:32px;font-weight:700;margin:0 0 20px;line-height:1.09;}
+  @media (min-width:640px){h1{font-size:48px;line-height:1.04;}}
+  h2{font-size:21px;font-weight:700;margin:30px 0 15px;}
+  @media (min-width:640px){h2{font-size:24px;}}
   p{margin:0 0 20px;max-width:640px;}
 
   ul.gov-list{margin:0 0 25px;padding-left:20px;max-width:640px;}
@@ -72,7 +81,7 @@
 
   ol.contents-list{list-style:none;margin:0 0 30px;padding:0;border-top:1px solid var(--govuk-border);max-width:640px;}
   ol.contents-list li{
-    border-bottom:1px solid var(--govuk-border);padding:12px 0;display:flex;gap:14px;align-items:baseline;
+    border-bottom:1px solid var(--govuk-border);padding:12px 0;display:flex;gap:14px;align-items:baseline;flex-wrap:wrap;
   }
   ol.contents-list .step-num{
     font-weight:700;color:var(--govuk-dark-grey);min-width:22px;
@@ -97,12 +106,14 @@
   aside p.small{font-size:14px;color:var(--govuk-dark-grey);margin:12px 0 0;}
 
   footer{border-top:1px solid var(--govuk-border);margin-top:60px;padding:30px 0;background:var(--govuk-light-grey);}
-  footer .inner{max-width:960px;margin:0 auto;padding:0 15px;font-size:14px;color:var(--govuk-dark-grey);
+  footer .inner{max-width:1020px;margin:0 auto;padding:0 15px;font-size:14px;color:var(--govuk-dark-grey);
     display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;}
   footer a{color:var(--govuk-dark-grey);}
 </style>
 </head>
 <body>
+
+  <a href="#main-content" class="skip-link">Skip to main content</a>
 
   <div class="crown-bar">
     <div class="crown-bar-inner">
@@ -128,7 +139,7 @@
   <div class="wrapper">
     <div class="grid">
 
-      <main>
+      <main id="main-content">
         <span class="caption">Narrative construction service</span>
         <h1>Build a new James Bond story</h1>
         <p>Walk through eight phases, pick options grounded in the real Fleming novels and the Connery-to-Dalton films, and get back a complete outline for an original narrative that holds together the way a Bond story should.</p>

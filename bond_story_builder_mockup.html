@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Scusefingers — Assignment</title>
 <style>
   :root{
@@ -27,12 +28,18 @@
   a{color:var(--govuk-blue);}
   a:visited{color:#4c2c92;}
   a:hover{color:#003078;}
-  a:focus, button:focus, input:focus{
-    outline:3px solid var(--govuk-yellow);
-    outline-offset:0;
-    background:var(--govuk-yellow);
+  a:focus, button:focus, input:focus, .option:focus-within{
+    outline:3px solid rgba(0,0,0,0);
+    background-color:var(--govuk-yellow);
     color:var(--govuk-focus-text);
+    box-shadow:0 -2px var(--govuk-yellow), 0 4px var(--govuk-black);
+    text-decoration:none;
   }
+  .skip-link{
+    position:absolute;left:-9999px;top:0;background:var(--govuk-yellow);color:var(--govuk-black);
+    padding:10px 15px;font-weight:700;z-index:100;
+  }
+  .skip-link:focus{left:0;}
 
   /* header */
   .crown-bar{
@@ -40,7 +47,7 @@
     padding:10px 0;
   }
   .crown-bar-inner{
-    max-width:960px;margin:0 auto;padding:0 15px;
+    max-width:1020px;margin:0 auto;padding:0 15px;
     display:flex;align-items:center;gap:8px;
   }
   .brand-mark{
@@ -55,8 +62,9 @@
     background:#ffffff;border-bottom:10px solid var(--govuk-blue);
   }
   .org-bar-inner{
-    max-width:960px;margin:0 auto;padding:12px 15px;
+    max-width:1020px;margin:0 auto;padding:12px 15px;
     display:flex;justify-content:space-between;align-items:center;
+    flex-wrap:wrap;gap:8px;
   }
   .org-bar .title{font-size:16px;font-weight:700;color:var(--govuk-black);}
   .official-tag{
@@ -66,14 +74,16 @@
   }
 
   .phase-banner{background:var(--govuk-black);color:#fff;}
-  .breadcrumb{max-width:960px;margin:0 auto;padding:8px 15px;font-size:16px;}
+  .breadcrumb{max-width:1020px;margin:0 auto;padding:8px 15px;font-size:16px;}
   .breadcrumb a{color:#fff;text-decoration:underline;}
 
-  .wrapper{max-width:960px;margin:0 auto;padding:30px 15px 60px;}
-  .grid{display:grid;grid-template-columns:300px 1fr;gap:30px;}
-  @media (max-width:700px){.grid{grid-template-columns:1fr;}}
+  .wrapper{max-width:1020px;margin:0 auto;padding:20px 15px 60px;}
+  .grid{display:grid;grid-template-columns:1fr;gap:30px;}
+  @media (min-width:640px){.wrapper{padding:30px 15px 60px;}}
+  @media (min-width:769px){.grid{grid-template-columns:1fr 300px;}}
 
-  h1{font-size:32px;font-weight:700;margin:0 0 10px;}
+  h1{font-size:27px;font-weight:700;margin:0 0 10px;line-height:1.11;}
+  @media (min-width:640px){h1{font-size:32px;line-height:1.09;}}
   h2.section-heading{font-size:19px;font-weight:700;margin:0 0 15px;}
   .caption{color:var(--govuk-dark-grey);font-size:19px;display:block;margin-bottom:5px;}
   p.lede{font-size:19px;margin:0 0 25px;max-width:640px;}
@@ -136,8 +146,8 @@
   aside h2{font-size:16px;margin:0 0 10px;font-weight:700;}
   aside p{font-size:16px;color:var(--govuk-dark-grey);margin:0 0 10px;}
   .spine-item{
-    display:flex;justify-content:space-between;padding:8px 0;
-    border-bottom:1px solid var(--govuk-mid-grey);font-size:16px;
+    display:flex;justify-content:space-between;align-items:center;padding:8px 0;
+    border-bottom:1px solid var(--govuk-mid-grey);font-size:16px;flex-wrap:wrap;gap:6px;
   }
   .spine-item:last-child{border-bottom:0;}
   .dot{width:10px;height:10px;border-radius:50%;display:inline-block;margin-right:8px;}
@@ -149,12 +159,14 @@
     border-top:1px solid var(--govuk-border);margin-top:60px;padding:30px 0;
     background:var(--govuk-light-grey);
   }
-  footer .inner{max-width:960px;margin:0 auto;padding:0 15px;font-size:14px;color:var(--govuk-dark-grey);
+  footer .inner{max-width:1020px;margin:0 auto;padding:0 15px;font-size:14px;color:var(--govuk-dark-grey);
     display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;}
   footer a{color:var(--govuk-dark-grey);}
 </style>
 </head>
 <body>
+
+  <a href="#main-content" class="skip-link">Skip to main content</a>
 
   <div class="crown-bar">
     <div class="crown-bar-inner">
@@ -171,13 +183,13 @@
   </div>
 
   <div class="phase-banner">
-    <div class="breadcrumb"><a href="index.html">Home</a> &nbsp;›&nbsp; <a href="index.html">Narrative construction</a> &nbsp;›&nbsp; Assignment</div>
+    <nav class="breadcrumb" aria-label="Breadcrumb"><a href="index.html">Home</a> &nbsp;›&nbsp; <a href="index.html">Narrative construction</a> &nbsp;›&nbsp; <span aria-current="page">Assignment</span></nav>
   </div>
 
   <div class="wrapper">
     <div class="grid">
 
-      <main>
+      <main id="main-content">
         <span class="caption">Case reference BOND-0742</span>
         <form>
           <fieldset>
